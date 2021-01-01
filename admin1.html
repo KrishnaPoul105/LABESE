@@ -1,0 +1,74 @@
+   
+ <!DOCTYPE html>
+<html>
+<head>
+<title>Admin</title>
+<style type="text/css">
+     table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+ </head>
+<body>
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for PRN.." title="Type in a name">
+      <table id="myTable">
+        <tr class="header">
+                <th>Full Name</th>
+                <th>PRN</th>
+        </tr>
+                          
+            <tr>
+            <td>2018BTECS00101</td> 
+            <td>Yash Vijay Hoke</td>
+            </tr>
+            <tr>
+            <td>2018BTECS00102</td> 
+            <td>Mayur Suresh Jadhav</td>
+            </tr>
+            <tr>
+            <td>2018BTECS00103</td> 
+            <td>Krishna Vinod Poul</td>
+            </tr>
+            <tr>
+            <td>2018BTECS00104</td> 
+            <td>Shreyash Patil</td>
+            </tr>
+            <tr>
+            <td>2018BTECS00105</td> 
+            <td>Siddharth Tandale</td>
+            </tr>
+                                </table>
+                                <script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+ </body>
+</html>
